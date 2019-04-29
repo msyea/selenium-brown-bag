@@ -2,10 +2,13 @@
   "name": "selenium-brown-bag",
   "version": "1.0.0",
   "description": "Simple selenium demo",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "node .",
-    "test": "npm test"
+    "test": "jest",
+    "start:dependencies": "docker-compose run start_dependencies",
+    "test:docker": "docker-compose run test",
+    "test:selenium": "npm run start:dependencies && npm run test:docker"
   },
   "repository": {
     "type": "git",
@@ -26,6 +29,7 @@
     "helmet": "^3.16.0",
     "js-yaml": "^3.13.1",
     "pug": "^2.0.3",
+    "selenium-webdriver": "^4.0.0-alpha.1",
     "swagger-tools": "^0.10.4"
   },
   "devDependencies": {

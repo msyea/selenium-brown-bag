@@ -1,0 +1,27 @@
+html
+  head
+    title= title
+  body
+    script(type='text/javascript').
+      window.addEventListener('load', function() {
+        document.title = 'Hey ho'
+      })
+    h1= message
+    button(id='but1') Show text
+    div(id='mydiv')
+    script(type='text/javascript').
+      document.getElementById('but1').addEventListener('click', function(evt) {
+        document.getElementById('mydiv').innerHTML = 'lolcats'
+        evt.preventDefault()
+        return false
+      })
+    hr
+    button(id='but2') Show an alert
+    script(type='text/javascript').
+      document.getElementById('but2').addEventListener('click', function(evt) {
+        alert('loldogs')
+        evt.preventDefault()
+        return false
+      })
+    hr
+    a(href='https://www.google.co.uk/ncr') Google

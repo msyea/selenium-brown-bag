@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  demo:
+    build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/app
+  selenium:
+    image: selenium/standalone-chrome-debug
+    shm_size: 2gb
+    ports:
+      - 5900:5900
+      - 4444:4444
+    depends_on:
+      - demo
+  start_dependencies:
+    image: dadarek/wait-for-dependencies
+    depends_on:
+      - demo
+      - selenium
+    command: demo:3000 selenium:4444
+  test:
+    build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/app
+    command: npm test
+  

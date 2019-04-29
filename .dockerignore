@@ -1,0 +1,8 @@
+node_modules
+bin
+.git
+.gitignore
+coverage
+.npmrc
+docker-compose.yml
+README.md

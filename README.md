@@ -24,3 +24,5 @@ In order to ensure we have a great experience across all devices we have to test
 
 Set up selenium
 The easiest way is to use docker compose and selenium standalone.
+
+https://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/
