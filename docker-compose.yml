@@ -15,17 +15,24 @@ services:
       - 4444:4444
     depends_on:
       - demo
+  sauce-connect:
+    image: henrrich/docker-sauce-connect
+    command: -u $SL_USERNAME -k $SL_KEY
   start_dependencies:
     image: dadarek/wait-for-dependencies
     depends_on:
       - demo
       - selenium
-    command: demo:3000 selenium:4444
+      - sauce-connect
+    command: demo:3000 selenium:4444 sauce-connect:4445
   test:
     build: .
     ports:
       - 3000:3000
     volumes:
       - .:/usr/app
+    environment:
+      SL_USERNAME: $SL_USERNAME
+      SL_KEY: $SL_KEY
     command: npm test
   

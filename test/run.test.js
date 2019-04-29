@@ -7,7 +7,14 @@ describe('selenium', () => {
   beforeAll(async () => {
     driver = await new Builder()
       .usingServer('http://selenium:4444/wd/hub')
-      .forBrowser('chrome')
+      // .usingServer('http://sauce-connect:4445/wd/hub')
+      .withCapabilities({
+        browserName: 'chrome',
+        // username: process.env.SL_USERNAME,
+        // accessKey: process.env.SL_KEY,
+        // recordVideo: false,
+        // recordScreenshots: false,
+      })
       .build()
   })
   afterAll(async () => {
