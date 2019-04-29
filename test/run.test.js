@@ -2,19 +2,20 @@ const { Builder, By, until } = require('selenium-webdriver')
 
 const DELAY = 0
 
+jest.setTimeout(30000)
+
 describe('selenium', () => {
   let driver
   beforeAll(async () => {
     driver = await new Builder()
       .usingServer('http://selenium:4444/wd/hub')
       // .usingServer('http://sauce-connect:4445/wd/hub')
-      .withCapabilities({
-        browserName: 'chrome',
-        // username: process.env.SL_USERNAME,
-        // accessKey: process.env.SL_KEY,
-        // recordVideo: false,
-        // recordScreenshots: false,
-      })
+      .forBrowser('chrome')
+      // .withCapabilities({
+      //   browserName: 'internet explorer',
+      //   username: process.env.SL_USERNAME,
+      //   accessKey: process.env.SL_KEY,
+      // })
       .build()
   })
   afterAll(async () => {

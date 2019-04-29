@@ -24,7 +24,7 @@ services:
       - demo
       - selenium
       - sauce-connect
-    command: demo:3000 selenium:4444 sauce-connect:4445
+    command: demo:3000 selenium:4444 selenium:4444
   test:
     build: .
     ports:
