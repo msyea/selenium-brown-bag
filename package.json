@@ -1,0 +1,80 @@
+{
+  "name": "selenium-brown-bag",
+  "version": "1.0.0",
+  "description": "Simple selenium demo",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msyea/selenium-brown-bag.git"
+  },
+  "keywords": [
+    "selenium"
+  ],
+  "author": "Simon Mayes",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/msyea/selenium-brown-bag/issues"
+  },
+  "homepage": "https://github.com/msyea/selenium-brown-bag#readme",
+  "dependencies": {
+    "debug": "^4.1.1",
+    "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "js-yaml": "^3.13.1",
+    "pug": "^2.0.3",
+    "swagger-tools": "^0.10.4"
+  },
+  "devDependencies": {
+    "dotenv": "^7.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-prettier": "^3.0.1",
+    "jest": "^24.7.1",
+    "nodemon": "^1.18.11",
+    "prettier": "^1.17.0"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb-base",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error"
+      ]
+    },
+    "env": {
+      "es6": true,
+      "node": true,
+      "jest": true
+    }
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**",
+      "!**/node_modules/**"
+    ],
+    "coverageThreshold": {
+      "src/": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": -10
+      }
+    }
+  }
+}
